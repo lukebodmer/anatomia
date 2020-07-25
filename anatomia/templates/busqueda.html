@@ -1,0 +1,103 @@
+{% extends "base_template.html" %}
+{% block content %}
+<h1>Buscar musculos que se insertan en un hueso</h1>
+    <!-- <form id="myform" action="{{ url_for('handle_data') }}" method="post">
+        <label for="huesos">Elegir una region:</label>
+        <select id="región" name="región">
+        <option value="huesos de la cabeza">huesos de la cabeza</option>
+        <option value="huesos del cuello">huesos del cuello</option>
+        <option value="huesos del tronco">huesos del tronco</option>
+        <option value="huesos del miembro superior">huesos del miembro superior</option>
+        <option value="huesos del miembro inferior">huesos del miembro inferior</option>
+        </select>
+        <input type="submit">
+    </form> -->
+
+
+
+<ul id="myUL">
+    {% for region in musculos.regiones %}
+    <li><span class="caret">{{ region.nombre }}</span>
+        {% if region.regiones %}
+            <ul class="nested">
+            {% for region in region.regiones %}
+                <li><span class="caret">{{ region.nombre }}</span>
+                {% if region.regiones %}
+                    <ul class="nested">
+                    {% for region in region.regiones %}
+                        <li><span class="caret">{{ region.nombre }}</span>
+                        {% if region.regiones %}
+                            <ul class="nested">
+                            {% for region in region.regiones %}
+                                <li><span class="caret">{{ region.nombre }}</span>
+                                {% if region.regiones %}
+                                    <ul class="nested">
+                                    {% for region in region.regiones %}
+                                        <li>{{ musculo.nombre }}</li>
+                                    {% endfor %}
+                                    </ul>
+                                {% elif region.musculos %}
+                                    <ul class="nested">
+                                    {% for musculo in region.musculos %}
+                                        <li>{{ musculo.nombre }}</li>
+                                    {% endfor %}
+                                    </ul>
+                                {% else %}
+                                    <li>{{ region.nombre }}</li>
+                                {% endif %}
+                            {% endfor %}
+                            </ul>
+                        {% elif region.musculos %}
+                            <ul class="nested">
+                            {% for musculo in region.musculos %}
+                            <li>{{ musculo.nombre }}</li>
+                            {% endfor %}
+                            </ul>
+                        {% else %}
+                            <p>fail...</p>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                    </li>
+                {% elif region.musculos %}
+                    <ul class="nested">
+                    {% for musculo in region.musculos %}
+                        <li>{{ musculo.nombre }}</li>
+                    {% endfor %}
+                    </ul>
+                {% else %}
+                    <li>NOOOOOOO</li>
+                {% endif %}
+                </li>
+            {% endfor %}
+            </ul>
+        {% elif region.musculos %}
+            <ul class="nested">
+            {% for musculo in region.musculo %}
+                <li>{{ musculo.nombre }}</li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>fail...</p>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+
+
+
+{% endblock %}
+{% block scripts %}
+    <script src="{{ url_for('static', filename='formajax.js')}}"></script>
+    <script>
+        var toggler = document.getElementsByClassName("caret");
+        var i;
+
+        for (i = 0; i < toggler.length; i++) {
+        toggler[i].addEventListener("click", function() {
+            this.parentElement.querySelector(".nested").classList.toggle("active");
+            this.classList.toggle("caret-down");
+        });
+        } 
+    </script>
+{% endblock %}
