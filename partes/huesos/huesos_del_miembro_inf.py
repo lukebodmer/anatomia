@@ -93,51 +93,83 @@ femur = (
     }
 )
 
+perone = (
+    "perone",
+    [],
+    {"cara interna" : (
+        ["cresta interosea"],
+        {}
+    ),
+    "cara externa" : (
+        ["canal longitudinal"],
+        {}
+    ),
+    "cara posterior" : (
+        ["agujero nutricional"],
+        {}
+    ),
+    "extremidad superior" : (
+        ["carilla articular",
+        "apofisis estiloides",
+        ],
+        {}
+    ),
+    "extremidad inferior" : (
+        ["maleolo externo"],
+        {}
+    )}
+)
 
-# perone = Hueso(
-#     cuerpo=Cuerpo(
-#         caras=[
-#             Cara("interna", cresta="interosea"),
-#             Cara("externa", canal="longitudinal"),
-#             Cara("posterior", agujero="nutricional")
-#         ]
-#     ),
-#     extremidad_superior=Extremidad("superior", 
-#         carilla="articular", 
-#         apofisis="estiloides"),
-#     extermidad_inferior=Extremidad("inferior", 
-#         apofisis="maleolo externo")
-# )
+tibia = (
+    "tibia",
+    [],
+    {"cuerpo" : (
+        ["cara anterointerna",
+        "cara anteroexterna",
+        "borde anterior"
+        "borde externo",
+        "borde interno"],
+        {"cara posterior" : (
+            ["linea oblicua",
+            "agujero nutricio"],
+            {}
+        )
+        }
+    ),
+    "extremidad superior" : (
+        ["espina de la tibia",
+        "superficie preespinosa",
+        "superficie retroespinosa",
+        "cavidad glenoidea interna",
+        "cavidad glenoidea externa"],
+        {"tuberosidad interna" : (
+            ["canal transversal"],
+            {}
+        ),
+        "tuberosidad externa" : (
+            ["carilla peronea",
+            "tubérculo de Gerdy"],
+            {}
+        )}
+    ),
+    "extremidad inferior" : (
+        ["cara anterior",
+        "cara posterior",
+        "cara inferior",
+        "cara interno"],
+        {"cara externa" : (
+            ["escotadura peronea"],
+            {}
+        ),
+        "cara interna" : (
+            ["maléolo interno"],
+            {}
+        )
+        }
+    ),
+    }
+)
 
-# tibia = Hueso(
-#     cuerpo=Cuerpo(
-#         caras=[
-#             Cara("anterointerna"),
-#             Cara("anteroexterna"),
-#             Cara("posterior", linea="oblicua", agujero="nutricio")
-#         ],
-#         bordes=[
-#             Borde("anterior"),
-#             Borde("interno"),
-#             Borde("externo")
-#         ]
-#     ),
-#     extermidad_superior=Extremidad("superior", 
-#         tuberosidades=[
-#             Tuberosidad(direccion="externa", carilla="peronea", tubérculo="tubérculo de Gerdy"),
-#             Tuberosidad(direccion="interna", canal="canal transversal")
-#             ], 
-#         espina="espina de la tibia"),
-#     extremidad_inferior=Extremidad("inferior",
-#         caras=[
-#             Cara("anterior"),
-#             Cara("posterior"),
-#             Cara("interna", maleolo="maleolo interno"),
-#             Cara("externa", escotadura="peronea"),
-#             Cara("inferior")
-#         ],
-#     )
-# )
 
 coxal = (
     "coxal",
@@ -218,110 +250,109 @@ coxal = (
     }
 )
 
-# astrágalo = Hueso(
-#     cuerpo="cuerpo",
-#     cuello="cuello",
-#     caras=[
-#         Cara("superior",
-#             tróclea="tróclea astragalina",
-#         ),
-#         "inferior",
-#         "maleolar lateral",
-#         "maleolar medial",
-#         "posterior",
-#         "anterior"
-#     ]
-# )
+astrágalo = (
+    "astrágalo",
+    ["cuerpo",
+    "cuello",
+    "cara inferior",
+    "cara maleolar lateral",
+    "cara maleolar medial",
+    "cara posterior",
+    "cara anterior"],
+    {"cara superior" : (
+        ["tróclea astragalina"],
+        {}
+    )}
+)
 
-# calcáneo = Hueso(
-#     caras=[
-#         "superior"
-#         "inferior",
-#         "lateral",
-#         "medial",
-#         "posterior",
-#         "anterior"
-#     ]
-# )
 
-# cuboides = Hueso(
-#     caras=[
-#         "superior"
-#         "inferior",
-#         "lateral",
-#         "medial",
-#         "posterior",
-#         "anterior"
-#     ]
-# )
+calcáneo = (
+    "calcáneo",
+    ["cara superior"
+    "cara inferior",
+    "cara lateral",
+    "cara medial",
+    "cara posterior",
+    "cara anterior"],
+    {}
+)
 
-# escafoides = Hueso(
-#     caras=[
-#         "superior"
-#         "inferior",
-#         "lateral",
-#         "medial",
-#         "posterior",
-#         "anterior"
-#     ]
-# )
+cuboides = (
+    "cuboides",
+    ["cara superior"
+    "cara inferior",
+    "cara lateral",
+    "cara medial",
+    "cara posterior",
+    "cara anterior"],
+    {}
+)
 
-# primera_cueiforme = Hueso(
-#     caras=[
-#         "superior"
-#         "inferior",
-#         "lateral",
-#         "medial",
-#         "posterior",
-#         "anterior"
-#     ]
-# )
+escafoides = (
+    "escafoides",
+    ["cara superior"
+    "cara inferior",
+    "cara lateral",
+    "cara medial",
+    "cara posterior",
+    "cara anterior"],
+    {}
+)
 
-# segunda_cueiforme = Hueso(
-#     caras=[
-#         "superior"
-#         "inferior",
-#         "lateral",
-#         "medial",
-#         "posterior",
-#         "anterior"
-#     ]
-# )
+primera_cueiforme = (
+    "primera_cueiforme",
+    ["cara superior"
+    "cara inferior",
+    "cara lateral",
+    "cara medial",
+    "cara posterior",
+    "cara anterior"],
+    {}
+)
 
-# tercera_cueiforme = Hueso(
-#     caras=[
-#         "superior"
-#         "inferior",
-#         "lateral",
-#         "medial",
-#         "posterior",
-#         "anterior"
-#     ]
-# )
+segunda_cueiforme = (
+    "segunda_cueiforme",
+    ["cara superior"
+    "cara inferior",
+    "cara lateral",
+    "cara medial",
+    "cara posterior",
+    "cara anterior"],
+    {}
+)
+
+tercera_cueiforme = (
+    "tercera_cueiforme",
+    ["cara superior"
+    "cara inferior",
+    "cara lateral",
+    "cara medial",
+    "cara posterior",
+    "cara anterior"],
+    {}
+)
+
+huesos_del_pie = Region(
+    nombre="huesos del pie",
+    huesos=[
+        astrágalo,
+        calcáneo,
+        cuboides,
+        escafoides,
+        primera_cueiforme,
+        segunda_cueiforme,
+        tercera_cueiforme,
+    ]
+)
+
 
 huesos_del_miembro_inferior = Region(
     nombre="huesos del miembro inferior",
     huesos=[
         coxal,
         femur,
-        # tibia,
-        # perone,
-        # astrágalo,
-        # calcáneo,
-        # cuboides,
-        # escafoides,
-        # primera_cueiforme,
-        # segunda_cueiforme,
-        # tercera_cueiforme,
+        tibia,
+        perone,
     ]
 )
 
-# huesos_del_pie = [
-#     astrágalo,
-#     calcáneo,
-#     cuboides,
-#     escafoides,
-#     primera_cueiforme,
-#     segunda_cueiforme,
-#     tercera_cueiforme,
-# ]
