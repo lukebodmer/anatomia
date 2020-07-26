@@ -15,7 +15,7 @@ class Agujero(objectoBase):
         self.tipo = "agujero"
 
 class Borde(objectoBase):
-    def __init__(self, direccion, **kwargs):
+    def __init__(self, direccion="gotta fix", **kwargs):
         super().__init__(**kwargs)
         self.tipo = "borde"
         self.direccion = direccion
@@ -26,7 +26,7 @@ class Cabeza(objectoBase):
         self.tipo = "cabeza"
 
 class Cara(objectoBase):
-    def __init__(self, direccion, **kwargs):
+    def __init__(self, direccion="gotta fix", **kwargs):
         super().__init__(**kwargs)
         self.tipo = "cara"
         self.direccion = direccion
@@ -109,8 +109,10 @@ class Tuberosidad(objectoBase):
 
 
 class Hueso():
-    def __init__(self, **kwargs):
+    def __init__(self, nombre, rasgos, **kwargs):
         self.__dict__.update(kwargs)
+        self.nombre = nombre
+        self.rasgos = rasgos 
 
 class Region(): # used por ejemplo para agrupar los tarsos del pie
     def __init__(self, **kwargs):

@@ -85,6 +85,55 @@
 </ul>
 
 
+<ul id="myUL">
+    {% for region in huesos.regiones %}
+    <li><span class="caret">{{ region.nombre }}</span>
+        <ul class="nested">
+        {% for hueso in region.huesos %}
+            {% if hueso.1 or hueso.2 %}
+                <li><span class="caret">{{ hueso.0 }}</span>
+                    <ul class="nested">
+                    {% for rasgo in hueso.1 %}
+                        <li> {{ rasgo }} </li>
+                    {% endfor %}
+                    {% for key, value in hueso.2.items() %}
+                        <li><span class="caret">{{ key }}</span>
+                            <ul class="nested">
+                            {% for rasgo in value.0 %}
+                                <li> {{ rasgo }} </li>
+                            {% endfor %}
+                            {% for rasgo, acidente in value.1.items() %}
+                                <li><span class="caret">{{ rasgo }}</span>
+                                    <ul class="nested">
+                                    {% for value in acidente.0 %}
+                                        <li> {{ value }} </li>
+                                    {% endfor %}
+                                    {% for rasgo, value in acidente.1.items() %}
+                                        <li><span class="caret">{{ rasgo }}</span>
+                                            <ul class="nested">
+                                            {% for accidente in value.0 %}
+                                                <li> {{ accidente }} </li>
+                                            {% endfor %}
+                                            </ul>
+                                        </li>
+                                    {% endfor %}
+                                    </ul>
+                            {% endfor %}
+                                </li>
+                            </ul>
+                    {% endfor %}
+                        </li>
+                    </ul>
+                </li>
+            {% else %}
+                <li><span>{{ hueso.nombre }}</span></li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </li>
+    {% endfor %}
+</ul>
+
 
 {% endblock %}
 {% block scripts %}

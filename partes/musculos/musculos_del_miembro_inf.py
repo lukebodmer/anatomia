@@ -1,4 +1,5 @@
 from ..elementos import Musculo, Region, Plano, Grupo
+from ..huesos.huesos_del_miembro_inf import coxal
 
 # musculo_prototipo = Musculo(
 #     origen=[
@@ -21,7 +22,6 @@ from ..elementos import Musculo, Region, Plano, Grupo
 musculo_glúteo_mayor = Musculo(
     nombre="Glúteo Mayor",
     origen=[
-        
     ],
     insercion=[
 
