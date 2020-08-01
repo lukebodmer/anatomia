@@ -1,7 +1,7 @@
 from ..elementos import Musculo, Region, Plano, Grupo
-from ..huesos.huesos_del_miembro_inf import coxal
+from ..huesos.huesos_del_miembro_inf import coxal, femur, tibia, perone, astrágalo, calcáneo
 
-# musculo_prototipo = Musculo(
+# musculo_ = Musculo(
 #     origen=[
         
 #     ],
@@ -22,6 +22,9 @@ from ..huesos.huesos_del_miembro_inf import coxal
 musculo_glúteo_mayor = Musculo(
     nombre="Glúteo Mayor",
     origen=[
+        ("1/4 posterior del ", coxal[2]["borde superior o Cresta Ilíaca"][0][1], ""),
+        ("", coxal[2]["cara lateral"][1]["fosa ilíaca externa"][0][2] ,"de la fosa ilíaca externa"),
+        ("", "" , "")
     ],
     insercion=[
 

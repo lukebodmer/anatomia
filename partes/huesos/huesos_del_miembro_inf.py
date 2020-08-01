@@ -1,19 +1,5 @@
-from ..elementos import (
-    Hueso, 
-    Borde, 
-    Cara, 
-    Cabeza, 
-    CavidadArticular,
-    Cóndilo, 
-    Cresta, 
-    Cuerpo, 
-    Eminencia, 
-    Extremidad, 
-    Fosa,
-    Parte,
-    Tuberosidad,
-    Region
-    )
+from ..elementos import Hueso, Region
+
 
 femur = (
     "femur",
@@ -226,7 +212,7 @@ coxal = (
         "tuberosidad isquiática"],
         {}
     ),
-    "borde superior" : (
+    "borde superior o Cresta Ilíaca" : (
         ["labio interno",
         "labio externo",
         "línea intermedia",],
@@ -355,4 +341,3 @@ huesos_del_miembro_inferior = Region(
         perone,
     ]
 )
-
